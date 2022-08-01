@@ -117,6 +117,7 @@ export default function(onViewComponent) {
   const handleKeyDown = ({ key }) => {
     if (key === ENTER && gameStatus === FINISHED) {
       onViewComponent(MENU);
+
       return;
     }
 
