@@ -1,25 +1,24 @@
-import logo from './logo.svg';
-import './App.css';
+import { memo, useState } from 'react';
 
-function App() {
-  return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
-  );
-}
+import Menu from 'components/Menu/Menu';
+import Settings from 'components/Settings/Settings';
+import Game from 'components/Game/Game';
+import Quit from 'components/Quit/Quit';
+import { GAME, MENU, QUIT, SETTINGS } from 'constants/constants';
+import "app.scss";
 
-export default App;
+const getComponent = {
+  [MENU]: Menu,
+  [SETTINGS]: Settings,
+  [GAME]: Game,
+  [QUIT]: Quit,
+};
+
+const App = () => {
+  const [viewComponent, setViewComponent] = useState('menu');
+  const Component = getComponent[viewComponent];
+
+  return <Component onViewComponent={setViewComponent} />;
+};
+
+export default memo(App);

@@ -1,0 +1,13 @@
+.menu {
+	img {
+		margin-bottom: 10px;
+		width: 300px;
+	}
+	&__item {
+		font-weight: bold;
+		padding: 5px 10px;
+		&:not(:last-child) {
+			margin-bottom: 5px;
+		}
+	}
+}
