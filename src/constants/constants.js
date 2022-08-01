@@ -1,3 +1,8 @@
+import Game from 'components/Game/Game';
+import Menu from 'components/Menu/Menu';
+import Quit from 'components/Quit/Quit';
+import Settings from 'components/Settings/Settings';
+
 export const MENU = 'menu';
 export const GAME = 'game';
 export const SETTINGS = 'settings';
@@ -20,6 +25,13 @@ export const ENTER = 'Enter';
 export const READY = 'ready';
 export const STARTED = 'started';
 export const FINISHED = 'finished';
+
+export const getComponent = {
+  [MENU]: Menu,
+  [SETTINGS]: Settings,
+  [GAME]: Game,
+  [QUIT]: Quit,
+};
 
 export const defaultMenuItems = [
   { label: 'New Game', component: GAME, isActive: true },
